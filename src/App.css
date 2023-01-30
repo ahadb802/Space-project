@@ -1,4 +1,39 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.navbar li {
+  border-right: 1px black solid;
+  padding-right: 5px;
+}
+
+.navbar li:last-child {
+  border: none;
 }
