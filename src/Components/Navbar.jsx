@@ -7,6 +7,8 @@ import {
 
 export default function Navbar() {
   return (
-    <nav>Nav</nav>
+    <header>
+      <nav></nav>
+    </header>
   )
 }
