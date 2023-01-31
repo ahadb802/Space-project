@@ -1,0 +1,44 @@
+.wraper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+}
+
+.rocket-container {
+  width: 90%;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-self: center;
+}
+
+.rocket-container img {
+  width: 25%;
+}
+
+.rocket-info {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.title {
+  font-size: 25px;
+}
+
+.rocket-description {
+  font-size: 18px;
+  text-align: justify;
+}
+
+.btn {
+  background-color: blue;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  width: 25%;
+  font-size: medium;
+  height: 40px;
+}
