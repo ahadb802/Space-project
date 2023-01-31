@@ -4,7 +4,6 @@ const fetchMissions = async (url) => {
   const results = await fetch(url)
     .then((res) => res.json())
     .then((data) => data);
-  console.log(results);
   return results;
 };
 
