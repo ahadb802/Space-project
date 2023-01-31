@@ -2,7 +2,8 @@ import React from 'react'
 import {
   Link
 } from "react-router-dom";
-import logo from '../Media/planet.png'
+import logo from '../../Media/planet.png';
+import './Navbar.css';
 
 export default function Navbar() {
   return (
