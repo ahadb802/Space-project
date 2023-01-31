@@ -5,6 +5,7 @@ import {
   Routes,
 } from 'react-router-dom';
 import Navbar from './Components/Navbar/Navbar';
+import Rocket from './Components/pages/Rocket/Rocket';
 
 function App() {
   return (
@@ -12,7 +13,7 @@ function App() {
       <BrowserRouter>
         <Navbar />
         <Routes>
-          <Route exact path="/" />
+          <Route path="/" element={<Rocket />} />
           <Route path="/missions" />
           <Route path="/profile" />
         </Routes>
