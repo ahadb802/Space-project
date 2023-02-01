@@ -1,19 +1,38 @@
 import React, { useEffect } from 'react';
-
-const fetchMissions = async (url) => {
-  const results = await fetch(url)
-    .then((res) => res.json())
-    .then((data) => data);
-  console.log(results);
-  return results;
-};
+import { useSelector, useDispatch } from 'react-redux';
+import { fetchMissions } from '../../redux/Mission-state/Mission';
+import './Mission.css';
 
 export default function Mission() {
+  const missions = useSelector((state) => state.missions.missions);
+  const dispatch = useDispatch(Mission);
+
   useEffect(() => {
-    fetchMissions('https://api.spacexdata.com/v3/missions');
-  }, []);
+    dispatch(fetchMissions());
+  }, [dispatch]);
 
   return (
-    <div>Mission</div>
+    <div>
+      <table className="missions-table">
+        <thead>
+          <tr>
+            <th>Mission</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          {missions.map((mission) => (
+            <tr key={mission.mission_name}>
+              <td>{mission.mission_name}</td>
+              <td>{mission.description}</td>
+              <td>Member</td>
+              <td>Leave mission</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
   );
 }
