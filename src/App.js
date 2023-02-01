@@ -7,6 +7,7 @@ import {
 import Navbar from './Components/Navbar/Navbar';
 import Rocket from './Components/pages/Rocket/Rocket';
 import Mission from './Components/pages/Mission/Mission';
+import Profile from './Components/pages/Profile/Profile';
 
 function App() {
   return (
@@ -16,7 +17,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Rocket />} />
           <Route path="/missions" element={<Mission />} />
-          <Route path="/profile" />
+          <Route path="/profile" element={<Profile />} />
         </Routes>
       </BrowserRouter>
     </div>

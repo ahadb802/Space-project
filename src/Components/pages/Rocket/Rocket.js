@@ -1,27 +1,20 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import SingleRocket from '../../singlerocket/SingleRocket';
-import { Alldata } from '../../redux/Rocket-state/Rocket';
 
 const Rocket = () => {
   // get rockets data from the store
-  const rocketList = useSelector((state) => state.rockets);
-  const send = useDispatch();
-
-  useEffect(() => {
-    send(Alldata());
-  }, [send]);
-
+  const rocketList = useSelector((state) => state.rocketData.rockets);
   return (
     <section>
-      {rocketList.map((item) => (
+      {rocketList?.map((item2) => (
         <SingleRocket
-          id={item.id}
-          key={item.id}
-          name={item.name}
-          image={item.image}
-          description={item.description}
-          reserved={item.reserved}
+          id={item2.id}
+          key={item2.id}
+          name={item2.name}
+          image={item2.image}
+          description={item2.description}
+          reserved={item2.reserved}
         />
       ))}
     </section>
