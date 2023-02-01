@@ -7,6 +7,7 @@ export const fetchMissions = createAsyncThunk('missions/fetchMissions', async ()
     mission_id: mission.mission_id,
     mission_name: mission.mission_name,
     description: mission.description,
+    joined: false,
   }));
   return missions;
 });
@@ -18,7 +19,19 @@ const missionsSlice = createSlice({
     missions: [],
   },
   reducers: {
-    // No need for a switch statement in the reducer anymore
+    toggleJoin: (state, action) => {
+      const missionId = action.payload;
+      const newMissions = state.missions.map((mission) => {
+        if (mission.mission_id !== missionId) {
+          return mission;
+        }
+        return { ...mission, joined: true };
+      });
+      return {
+        ...state,
+        missions: [...newMissions],
+      };
+    },
   },
   extraReducers: {
     [fetchMissions.pending]: (state) => ({ ...state, loading: true }),
@@ -31,5 +44,5 @@ const missionsSlice = createSlice({
   },
 });
 
-// export const { } = missionsSlice.actions;
+export const { toggleJoin } = missionsSlice.actions;
 export default missionsSlice.reducer;
