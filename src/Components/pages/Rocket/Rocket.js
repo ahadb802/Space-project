@@ -5,7 +5,6 @@ import SingleRocket from '../../singlerocket/SingleRocket';
 const Rocket = () => {
   // get rockets data from the store
   const rocketList = useSelector((state) => state.rocketData.rockets);
-
   return (
     <section>
       {rocketList?.map((item2) => (

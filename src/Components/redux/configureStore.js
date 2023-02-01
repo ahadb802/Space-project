@@ -4,7 +4,7 @@ import missionsReducer from './Mission-state/Mission';
 
 const store = configureStore({
   reducer: {
-    rockets: rocketsReducer,
+    rocketData: rocketsReducer,
     missions: missionsReducer,
   },
 });
