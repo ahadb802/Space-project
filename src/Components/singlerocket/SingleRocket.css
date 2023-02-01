@@ -42,3 +42,10 @@
   font-size: medium;
   height: 40px;
 }
+
+.reserved {
+  background-color: aquamarine;
+  padding: 5px;
+  font-size: 15px;
+  border-radius: 10px;
+}
