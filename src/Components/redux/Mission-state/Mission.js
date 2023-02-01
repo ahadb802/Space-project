@@ -25,7 +25,7 @@ const missionsSlice = createSlice({
         if (mission.mission_id !== missionId) {
           return mission;
         }
-        return { ...mission, joined: true };
+        return { ...mission, joined: !mission.joined };
       });
       return {
         ...state,
