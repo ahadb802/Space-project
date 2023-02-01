@@ -6,7 +6,6 @@ import { Alldata } from '../../redux/Rocket-state/Rocket';
 const Rocket = () => {
   // get rockets data from the store
   const rocketList = useSelector((state) => state.rockets);
-  console.log(rocketList);
   const send = useDispatch();
 
   useEffect(() => {
