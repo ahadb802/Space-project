@@ -2,3 +2,91 @@
   margin: 0;
   padding: 0;
 }
+
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
+.missions-table {
+  width: 100%;
+}
+
+table {
+  border: 1px solid grey;
+  border-bottom: none;
+  border-spacing: 0;
+}
+
+th {
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  text-align: left;
+  padding: 10px 5px;
+}
+
+td {
+  border-right: 1px solid grey;
+  border-bottom: 1px solid grey;
+  padding: 5px;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
+}
+
+.mission-name {
+  vertical-align: baseline;
+  font-weight: bold;
+}
+
+.description {
+  padding-bottom: 25px;
+}
+
+.pair {
+  background: #dedede;
+}
+
+.odd {
+  background: #fff;
+}
+
+.member {
+  color: #fff;
+  border-radius: 5px;
+  padding: 2px;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inactive.member {
+  background: gray;
+  width: 135px;
+}
+
+.active.member {
+  background: #0e92a5;
+  width: 124px;
+}
+
+.button {
+  border-radius: 2px;
+  padding: 5px;
+  cursor: pointer;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.join.button {
+  border: solid 1px black;
+  width: 96px;
+}
+
+.leave.button {
+  border: solid 1px red;
+  color: red;
+  width: 108px;
+}
