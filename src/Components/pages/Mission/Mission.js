@@ -1,15 +1,9 @@
-import React, { useEffect } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import { fetchMissions } from '../../redux/Mission-state/Mission';
+import React from 'react';
+import { useSelector } from 'react-redux';
 import './Mission.css';
 
 export default function Mission() {
   const missions = useSelector((state) => state.missions.missions);
-  const dispatch = useDispatch(Mission);
-
-  useEffect(() => {
-    dispatch(fetchMissions());
-  }, [dispatch]);
 
   return (
     <div className="container">
