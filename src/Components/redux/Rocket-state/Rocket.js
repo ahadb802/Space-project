@@ -1,32 +1,52 @@
+import Rockets from '../../Api/Rocketsapi';
+
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
+const RESERVED_ROCKETS = 'RESERVED_ROCKETS';
+const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 
 const initialState = [];
 
-export const Rockets = () => async (dispatch) => {
-  const resp = await fetch('https://api.spacexdata.com/v3/rockets');
-  const data = await resp.json();
-  const rockets = [];
-  data.forEach((rocket) => {
-    rockets.push({
-      id: rocket.rocket_id,
-      name: rocket.rocket_name,
-      description: rocket.description,
-      image: rocket.flickr_images[0],
-    });
-  });
+const rocketsReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case FETCH_ROCKETS:
+      return action.rockets;
+    case RESERVED_ROCKETS:
+      return (state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: true };
+      })
+      );
+    case CANCEL_RESERVATION:
+      return (state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: false };
+      })
+      );
+
+    default:
+      return state;
+  }
+};
+
+export const Alldata = () => async (dispatch) => {
+  const rockets = await Rockets();
   dispatch({
     type: FETCH_ROCKETS,
     rockets,
   });
 };
 
-const rocketsReducer = (state = initialState, action) => {
-  switch (action.type) {
-    case FETCH_ROCKETS:
-      return { ...state, loading: true };
-    default:
-      return state;
-  }
+export const reservedRocket = (id) => async (dispatch) => {
+  dispatch({
+    type: RESERVED_ROCKETS,
+    id,
+  });
 };
 
+export const cancelreservation = (id) => async (dispatch) => {
+  dispatch({
+    type: CANCEL_RESERVATION,
+    id,
+  });
+};
 export default rocketsReducer;

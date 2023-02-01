@@ -1,9 +1,17 @@
 header {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   width: 100%;
-  padding: 5px;
+}
+
+.navbar-contanier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10px;
+  border-bottom: 1px solid grey;
 }
 
 .logo-container {
@@ -29,4 +37,8 @@ header {
 
 .navbar li:last-child {
   border: none;
+}
+
+.navbar li a {
+  color: black;
 }
