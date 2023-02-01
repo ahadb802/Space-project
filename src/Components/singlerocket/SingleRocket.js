@@ -2,14 +2,14 @@ import React from 'react';
 import propTypes from 'prop-types';
 import './SingleRocket.css';
 import { useDispatch } from 'react-redux';
-import { reservedRocket } from '../redux/Rocket-state/Rocket';
+import { reservedRocket, cancelreservation } from '../redux/Rocket-state/Rocket';
 
 const SingleRocket = ({
   id, name, description, image, reserved,
 }) => {
   const check = useDispatch();
   const checkReservation = () => {
-    check(reservedRocket(id));
+    if (reserved) { check(cancelreservation(id)); } else { check(reservedRocket(id)); }
   };
   return (
     <div className="wraper" key={id}>
@@ -25,7 +25,7 @@ const SingleRocket = ({
             )}
             {description}
           </p>
-          <button className="btn" type="button" onClick={checkReservation}>
+          <button className={reserved ? 'Cancel' : 'Reserve'} type="button" onClick={checkReservation}>
             {reserved ? 'Cancel Reservation' : 'Reserve Rocket'}
           </button>
         </div>

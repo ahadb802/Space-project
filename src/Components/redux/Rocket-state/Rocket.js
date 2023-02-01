@@ -2,6 +2,7 @@ import Rockets from '../../Api/Rocketsapi';
 
 const FETCH_ROCKETS = 'FETCH_ROCKETS';
 const RESERVED_ROCKETS = 'RESERVED_ROCKETS';
+const CANCEL_RESERVATION = 'CANCEL_RESERVATION';
 
 const initialState = [];
 
@@ -9,11 +10,16 @@ const rocketsReducer = (state = initialState, action) => {
   switch (action.type) {
     case FETCH_ROCKETS:
       return action.rockets;
-      // return action.rockets;
     case RESERVED_ROCKETS:
       return (state.map((rocket) => {
         if (rocket.id !== action.id) return rocket;
         return { ...rocket, reserved: true };
+      })
+      );
+    case CANCEL_RESERVATION:
+      return (state.map((rocket) => {
+        if (rocket.id !== action.id) return rocket;
+        return { ...rocket, reserved: false };
       })
       );
 
@@ -37,4 +43,10 @@ export const reservedRocket = (id) => async (dispatch) => {
   });
 };
 
+export const cancelreservation = (id) => async (dispatch) => {
+  dispatch({
+    type: CANCEL_RESERVATION,
+    id,
+  });
+};
 export default rocketsReducer;

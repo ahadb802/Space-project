@@ -33,7 +33,7 @@
   text-align: justify;
 }
 
-.btn {
+.Reserve {
   background-color: blue;
   color: white;
   border: none;
@@ -48,4 +48,14 @@
   padding: 5px;
   font-size: 15px;
   border-radius: 10px;
+}
+
+.Cancel {
+  background-color: whitesmoke;
+  color: black;
+  border: 1px solid black;
+  border-radius: 4px;
+  width: 25%;
+  font-size: medium;
+  height: 40px;
 }
