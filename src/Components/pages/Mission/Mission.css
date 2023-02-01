@@ -3,24 +3,32 @@
   padding: 0;
 }
 
+.container {
+  width: 100%;
+  padding: 20px;
+}
+
 .missions-table {
   width: 100%;
 }
 
 table {
   border: 1px solid grey;
+  border-bottom: none;
   border-spacing: 0;
 }
 
 th {
   border-right: 1px solid grey;
-}
-
-th:last-child {
-  border: none;
+  border-bottom: 1px solid grey;
 }
 
 td {
   border-right: 1px solid grey;
   border-bottom: 1px solid grey;
+}
+
+th:last-child,
+td:last-child {
+  border-right: none;
 }

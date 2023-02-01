@@ -12,7 +12,7 @@ export default function Mission() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className="container">
       <table className="missions-table">
         <thead>
           <tr>
