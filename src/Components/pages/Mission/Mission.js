@@ -6,7 +6,7 @@ export default function Mission() {
   const missions = useSelector((state) => state.missions.missions);
 
   return (
-    <div className="container">
+    <div className="table-container">
       <table className="missions-table">
         <thead>
           <tr>

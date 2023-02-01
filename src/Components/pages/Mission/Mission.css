@@ -3,7 +3,7 @@
   padding: 0;
 }
 
-.container {
+.table-container {
   width: 100%;
   padding: 20px;
 }
@@ -82,11 +82,11 @@ td:last-child {
 
 .join.button {
   border: solid 1px black;
-  width: 96px;
+  width: 100px;
 }
 
 .leave.button {
   border: solid 1px red;
   color: red;
-  width: 108px;
+  width: 112px;
 }
