@@ -1,0 +1,45 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.navbar-contanier {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 90%;
+  padding: 10px;
+  border-bottom: 1px solid grey;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.navbar {
+  display: flex;
+  list-style: none;
+  gap: 10px;
+}
+
+.navbar li {
+  border-right: 1px black solid;
+  padding-right: 5px;
+}
+
+.navbar li:last-child {
+  border: none;
+}
+
+.navbar li a {
+  color: black;
+}
